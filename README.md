@@ -20,7 +20,9 @@ So here's my take:
 	- OS X
 	- Linux
 		- Ubuntu 16.04.1 LTS (Xenial Xerus)
-		- package: uuid-dev/xenial-updates,now 2.27.1-6ubuntu3.1		
+		- package: uuid-dev/xenial-updates,now 2.27.1-6ubuntu3.1
+	- ESP8266 + esp-open-sdk ~ 1.3 - 1.5.4 for gcc-xtensa-lx106
+	
 - Updated bin/test to be more like me, a little bit more verbose (-dpd) 
 ---
 
