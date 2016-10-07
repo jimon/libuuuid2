@@ -56,6 +56,24 @@ bool uuuid2_gen(uuuid2_t *u)
 }
 #endif
 
+
+#ifdef __linux__
+#include <uuid/uuid.h>
+
+bool uuuid2_gen(uuuid2_t *u)
+{
+	uuid_t uuid = {0};
+	uuid_generate_time(uuid);
+
+	uint8_t * uuid_b = (uint8_t*)&uuid;
+	for(uint8_t i = 0; i < 16; ++i)
+		u->bytes[i] = uuid_b[i];
+	return 1;
+}
+
+#endif
+
+
 #ifdef __APPLE__
 #include <stdlib.h>
 #include <uuid/uuid.h>

@@ -18,11 +18,13 @@ So here's my take:
 	- Windows
 	- FreeBSD
 	- OS X
+	- Linux
+		- Ubuntu 16.04.1 LTS (Xenial Xerus)
+		- package: uuid-dev/xenial-updates,now 2.27.1-6ubuntu3.1		
 - Updated bin/test to be more like me, a little bit more verbose (-dpd) 
 ---
 
 TODO:
 - Generate domain specific uuid's
 - Support:
-	- Linux
 

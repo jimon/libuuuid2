@@ -8,6 +8,12 @@ LOCAL_LIB_SRC=
 DEFS=
 LIBS=
 
+UNAME := $(shell uname)
+
+ifeq ($(UNAME), Linux)
+LIBS+=-luuid
+endif
+
 BIN_SRC=$(wildcard bin/*.c)
 BIN_OBJ=$(BIN_SRC:.c=.o)
 BIN_EXEC=$(BIN_SRC:.c=)
@@ -21,7 +27,7 @@ all:  $(LIB_SRC) $(LIB_OBJ) $(BIN_SRC) $(BIN_OBJ) $(BIN_EXEC)
 	$(CC) -c -o $@ $< $(CFLAGS) $(INCLUDES) $(DEFS)
 
 %: %.o $(LOCAL_LIB_OBJ) 
-	$(CC) $(LDFLAGS) $(LIBS) $(LIB_OBJ) $(DEFS) -o $@ $^
+	$(CC) $(LDFLAGS) $(LIB_OBJ) $(LIBS) $(DEFS) -o $@ $^
 
 clean:
 	rm -f  $(LIB_OBJ) $(BIN_OBJ) $(BIN_EXEC) 
