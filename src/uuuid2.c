@@ -40,7 +40,7 @@ uuuid2_t uuuid2_gen()
 #endif
 
 #ifdef __FreeBSD__
-#include </usr/include/uuid->h>
+#include </usr/include/uuid.h>
 bool uuuid2_gen(uuuid2_t *u)
 {
 	uuid_t uuid = {0};
